@@ -31,4 +31,30 @@ public class Radio {
     public int getRadioVolume() {
         return radioVolume;
     }
+
+
+
+
+    public void radioVolumeUp() {
+        setRadioVolume(getRadioVolume() + 1);
+    }
+
+    public void radioVolumeDown() {
+        setRadioVolume(getRadioVolume() - 1);
+    }
+
+    public void radioChannelNext() {
+        setRadioChannel(getRadioChannel() + 1);
+    }
+
+    public void radioChannelPrev() {
+        setRadioChannel(getRadioChannel() - 1);
+    }
+
+    public void radioChannelManualControl(int channelManual) {
+        if (channelManual >= 0 && channelManual <= 9)
+            setRadioChannel(channelManual);
+
+    }
+
 }
