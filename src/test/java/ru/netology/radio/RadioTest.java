@@ -13,7 +13,7 @@ public class RadioTest {
             "10,10",
             "5,6"
     })
-    void radioVolumeUpTest(int defaultChannel, int expectedChannel){
+    void radioVolumeUpTest(int defaultChannel, int expectedChannel) {
         Radio radio = new Radio();
 
         radio.setRadioVolume(defaultChannel);
@@ -23,7 +23,7 @@ public class RadioTest {
         int actual = radio.getRadioVolume();
         int expected = expectedChannel;
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @ParameterizedTest
@@ -32,7 +32,7 @@ public class RadioTest {
             "10,9",
             "5,4"
     })
-    void radioVolumeDownTest(int defaultChannel, int expectedChannel){
+    void radioVolumeDownTest(int defaultChannel, int expectedChannel) {
         Radio radio = new Radio();
 
         radio.setRadioVolume(defaultChannel);
@@ -42,7 +42,7 @@ public class RadioTest {
         int actual = radio.getRadioVolume();
         int expected = expectedChannel;
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @ParameterizedTest
@@ -51,7 +51,7 @@ public class RadioTest {
             "9,0",
             "5,6"
     })
-    void radioChannelNextTest(int defaultChannel, int expectedChannel){
+    void radioChannelNextTest(int defaultChannel, int expectedChannel) {
         Radio radio = new Radio();
 
         radio.setRadioChannel(defaultChannel);
@@ -61,15 +61,16 @@ public class RadioTest {
         int actual = radio.getRadioChannel();
         int expected = expectedChannel;
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
+
     @ParameterizedTest
     @CsvSource({
             "0,9",
             "9,8",
             "5,4"
     })
-    void radioChannelPrevTest(int defaultChannel, int expectedChannel){
+    void radioChannelPrevTest(int defaultChannel, int expectedChannel) {
         Radio radio = new Radio();
 
         radio.setRadioChannel(defaultChannel);
@@ -79,7 +80,7 @@ public class RadioTest {
         int actual = radio.getRadioChannel();
         int expected = expectedChannel;
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @ParameterizedTest
@@ -88,7 +89,7 @@ public class RadioTest {
             "6,-1,6",
             "0,12,0"
     })
-    void radioChannelManualControlTest(int defaultChannel, int newChannel, int expectedChannel){
+    void radioChannelManualControlTest(int defaultChannel, int newChannel, int expectedChannel) {
         Radio radio = new Radio();
 
         radio.setRadioChannel(defaultChannel);
@@ -98,6 +99,6 @@ public class RadioTest {
         int actual = radio.getRadioChannel();
         int expected = expectedChannel;
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 }
