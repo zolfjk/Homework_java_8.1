@@ -4,12 +4,22 @@ public class Radio {
     private int radioChannel;
     private int radioVolume;
 
+    private int countOfChannels;
+
+    public Radio(int countOfChannels) {
+        this.countOfChannels = countOfChannels;
+    }
+
+    public Radio() {
+        this.countOfChannels = 10;
+    }
+
     public void setRadioChannel(int newRadioChannel) {
-        if (newRadioChannel > 9) {
+        if (newRadioChannel > countOfChannels - 1) {
             newRadioChannel = 0;
         }
         if (newRadioChannel < 0) {
-            newRadioChannel = 9;
+            newRadioChannel = countOfChannels - 1;
         }
         this.radioChannel = newRadioChannel;
     }
@@ -19,7 +29,7 @@ public class Radio {
     }
 
     public void setRadioVolume(int newRadioVolume) {
-        if (newRadioVolume > 10) {
+        if (newRadioVolume > 100) {
             return;
         }
         if (newRadioVolume < 0) {
@@ -31,8 +41,6 @@ public class Radio {
     public int getRadioVolume() {
         return radioVolume;
     }
-
-
 
 
     public void radioVolumeUp() {
@@ -52,8 +60,9 @@ public class Radio {
     }
 
     public void radioChannelManualControl(int channelManual) {
-        if (channelManual >= 0 && channelManual <= 9)
+        if (channelManual >= 0 && channelManual <= 9) {
             setRadioChannel(channelManual);
+        }
 
     }
 
