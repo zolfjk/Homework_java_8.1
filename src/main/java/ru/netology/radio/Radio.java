@@ -1,25 +1,34 @@
 package ru.netology.radio;
 
+import lombok.Data;
+
+@Data
 public class Radio {
     private int radioChannel;
     private int radioVolume;
+    private int countOfChannels;
+
+
+    public Radio(int countOfChannels) {
+        this.countOfChannels = countOfChannels;
+    }
+
+    public Radio() {
+        this.countOfChannels = 10;
+    }
 
     public void setRadioChannel(int newRadioChannel) {
-        if (newRadioChannel > 9) {
+        if (newRadioChannel > countOfChannels - 1) {
             newRadioChannel = 0;
         }
         if (newRadioChannel < 0) {
-            newRadioChannel = 9;
+            newRadioChannel = countOfChannels - 1;
         }
         this.radioChannel = newRadioChannel;
     }
 
-    public int getRadioChannel() {
-        return radioChannel;
-    }
-
     public void setRadioVolume(int newRadioVolume) {
-        if (newRadioVolume > 10) {
+        if (newRadioVolume > 100) {
             return;
         }
         if (newRadioVolume < 0) {
@@ -27,11 +36,6 @@ public class Radio {
         }
         this.radioVolume = newRadioVolume;
     }
-
-    public int getRadioVolume() {
-        return radioVolume;
-    }
-
 
 
 
@@ -52,8 +56,9 @@ public class Radio {
     }
 
     public void radioChannelManualControl(int channelManual) {
-        if (channelManual >= 0 && channelManual <= 9)
+        if (channelManual >= 0 && channelManual <= countOfChannels - 1) {
             setRadioChannel(channelManual);
+        }
 
     }
 
