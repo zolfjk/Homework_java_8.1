@@ -109,7 +109,7 @@ public class RadioTest {
             "9,8,0"
     })
     void radioChannelNextWithSetCountOfChannelsTest(int countOfChannels, int defaultChannel, int expectedChannel) {
-        Radio radio = new Radio(countOfChannels - 1);
+        Radio radio = new Radio(countOfChannels);
 
         radio.setRadioChannel(defaultChannel);
 
@@ -128,7 +128,7 @@ public class RadioTest {
             "9,0,8"
     })
     void radioChannelPrevWithSetCountOfChannelsTest(int countOfChannels, int defaultChannel, int expectedChannel) {
-        Radio radio = new Radio(countOfChannels - 1);
+        Radio radio = new Radio(countOfChannels);
 
         radio.setRadioChannel(defaultChannel);
 

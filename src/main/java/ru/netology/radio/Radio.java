@@ -4,22 +4,22 @@ public class Radio {
     private int radioChannel;
     private int radioVolume;
 
-    private int maxChannel;
+    private int countOfChannels;
 
-    public Radio(int maxChannel) {
-        this.maxChannel = maxChannel;
+    public Radio(int countOfChannels) {
+        this.countOfChannels = countOfChannels;
     }
 
     public Radio() {
-        this.maxChannel = 9;
+        this.countOfChannels = 10;
     }
 
     public void setRadioChannel(int newRadioChannel) {
-        if (newRadioChannel > maxChannel) {
+        if (newRadioChannel > countOfChannels - 1) {
             newRadioChannel = 0;
         }
         if (newRadioChannel < 0) {
-            newRadioChannel = maxChannel;
+            newRadioChannel = countOfChannels - 1;
         }
         this.radioChannel = newRadioChannel;
     }
