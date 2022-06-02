@@ -1,9 +1,11 @@
 package ru.netology.radio;
 
+import lombok.Data;
+
+@Data
 public class Radio {
     private int radioChannel;
     private int radioVolume;
-
     private int maxChannel;
 
     public Radio(int maxChannel) {
@@ -24,10 +26,6 @@ public class Radio {
         this.radioChannel = newRadioChannel;
     }
 
-    public int getRadioChannel() {
-        return radioChannel;
-    }
-
     public void setRadioVolume(int newRadioVolume) {
         if (newRadioVolume > 100) {
             return;
@@ -36,10 +34,6 @@ public class Radio {
             return;
         }
         this.radioVolume = newRadioVolume;
-    }
-
-    public int getRadioVolume() {
-        return radioVolume;
     }
 
 
