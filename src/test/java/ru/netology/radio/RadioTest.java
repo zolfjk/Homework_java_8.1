@@ -1,7 +1,6 @@
 package ru.netology.radio;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -109,7 +108,7 @@ public class RadioTest {
             "9,8,0"
     })
     void radioChannelNextWithSetCountOfChannelsTest(int countOfChannels, int defaultChannel, int expectedChannel) {
-        Radio radio = new Radio(countOfChannels - 1);
+        Radio radio = new Radio(countOfChannels);
 
         radio.setRadioChannel(defaultChannel);
 
@@ -128,7 +127,7 @@ public class RadioTest {
             "9,0,8"
     })
     void radioChannelPrevWithSetCountOfChannelsTest(int countOfChannels, int defaultChannel, int expectedChannel) {
-        Radio radio = new Radio(countOfChannels - 1);
+        Radio radio = new Radio(countOfChannels);
 
         radio.setRadioChannel(defaultChannel);
 
